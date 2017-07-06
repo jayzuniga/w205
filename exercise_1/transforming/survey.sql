@@ -8,15 +8,17 @@ Drop TABLE SurveyResponses;
 CREATE TABLE SurveyResponses
 AS
 SELECT
-  provider_id,
+  provider_number,
   hospital_name,
-  avg(regexp_replace(overall_rating_achievement_pts, '^(.*) out of', '$1')
+  avg(cast(regexp_replace(overall_rating_hospital_achievement_points, '^(.*) out of', '$1') as float))
                                       AS achievement_rating,
-  avg(overall_rating_improvement_pts) AS improvement_rating,
-  avg(overall_rating_dimension_score) AS dimension_rating,
+  avg(cast(regexp_replace(overall_rating_hospital_improvement_points, '^(.*) out of', '$1') as float))
+                                      AS improvement_rating,
+  avg(cast(regexp_replace(overall_rating_hospital_dimension_score, '^(.*) out of', '$1') as float))
+                                      AS dimension_rating,
   avg(hcahps_base_score)              AS base_score,
   avg(hcahps_consistency_score)       AS consistency_score
 FROM survey_responses_raw
-GROUP BY provider_id,
+GROUP BY provider_number,
          hospital_name
 ;
