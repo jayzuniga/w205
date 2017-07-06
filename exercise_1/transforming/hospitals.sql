@@ -29,7 +29,12 @@ LEFT JOIN effective_care_raw AS e
 LEFT JOIN readmissions_raw   AS rd
   ON (rd.provider_id = h.provider_id)
 WHERE e.score <> "Not Available"
-AND e.measure_name <> "Emergency department volume"
+AND e.measure_name not in ("Emergency department volume",
+                           "ED1",
+                           "ED2",
+                           "OP 18",
+                           "Median Time to Transfer to Another Facility for Acute Coronary Intervention",
+                           "Median time to pain med")
 AND cast(e.score as int) > 0
 GROUP BY h.provider_id,
          h.hospital_name,
