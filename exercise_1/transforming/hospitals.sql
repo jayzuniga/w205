@@ -1,6 +1,12 @@
--- Create the hospitals table 
+-- This script creates the hospitals table
+
+-- Drop previous instance of the table if it is exists so it can be refreshed
+-- with current data
 DROP TABLE Hospitals;
 
+
+-- Create Hospitals table using hospitals_raw, effective_care_raw and
+-- readmissions_raw
 CREATE TABLE Hospitals
 AS
 SELECT
@@ -17,10 +23,10 @@ SELECT
   if(h.emergency_services = "Yes", True, False) AS has_emergency_services,
   avg(cast(e.score as int))                     AS effective_care_avg_score,
   avg(cast(rd.score as float))                  AS readmissions_death_avg_score
-FROM hospitals_raw AS h
-LEFT JOIN effective_care_raw as e
+FROM hospitals_raw           AS h
+LEFT JOIN effective_care_raw AS e
   ON (e.provider_id = h.provider_id)
-LEFT JOIN readmissions_raw as rd
+LEFT JOIN readmissions_raw   AS rd
   ON (rd.provider_id = h.provider_id)
 WHERE e.score <> "Not Available"
 AND e.measure_name <> "Emergency department volume"
