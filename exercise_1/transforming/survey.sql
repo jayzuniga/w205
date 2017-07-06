@@ -10,11 +10,11 @@ AS
 SELECT
   provider_number,
   hospital_name,
-  avg(cast(regexp_replace(overall_rating_hospital_achievement_points, '^(.*) out of', '$1') as float))
+  avg(nvl(cast(regexp_replace(overall_rating_hospital_achievement_points, '^(.*) out of', '$1') as float),0))
                                       AS achievement_rating,
-  avg(cast(regexp_replace(overall_rating_hospital_improvement_points, '^(.*) out of', '$1') as float))
+  avg(nvl(cast(regexp_replace(overall_rating_hospital_improvement_points, '^(.*) out of', '$1') as float),0))
                                       AS improvement_rating,
-  avg(cast(regexp_replace(overall_rating_hospital_dimension_score, '^(.*) out of', '$1') as float))
+  avg(nvl(cast(regexp_replace(overall_rating_hospital_dimension_score, '^(.*) out of', '$1') as float),0))
                                       AS dimension_rating,
   avg(hcahps_base_score)              AS base_score,
   avg(hcahps_consistency_score)       AS consistency_score
