@@ -1,7 +1,10 @@
+-- This script creates the procedures table
 
--- Create Procedures table
+-- Drops previous instance of the table if it exists so that it
+-- can be refreshed with most current data
 DROP TABLE Procedures;
 
+-- Create Procedures table using effective_care_raw
 CREATE TABLE Procedures
 AS
 SELECT
@@ -11,7 +14,7 @@ SELECT
   max(score)     AS max_score,
   avg(score)     AS avg_score,
   var(score)     AS var_score
-FROM effective_car_raw
+FROM effective_care_raw
 GROUP BY measure_name,
          measure_id
 ;
