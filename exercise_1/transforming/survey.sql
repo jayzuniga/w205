@@ -1,13 +1,17 @@
--- Create Survey table
+-- This script creates the SurveyResponses table
 
-Drop TABLE Survey;
+-- Drops the previous instance of the SurveyResponses table if it exists
+-- so that it can be refreshed with most recent data
+Drop TABLE SurveyResponses;
 
-CREATE TABLE Survey
+-- Create SurveyResponses table using survey_responses_raw
+CREATE TABLE SurveyResponses
 AS
 SELECT
   provider_id,
   hospital_name,
-  avg(regexp_replace(overall_rating_achievement_pts, '^(.*) out of', '$1') AS achievement_rating,
+  avg(regexp_replace(overall_rating_achievement_pts, '^(.*) out of', '$1')
+                                      AS achievement_rating,
   avg(overall_rating_improvement_pts) AS improvement_rating,
   avg(overall_rating_dimension_score) AS dimension_rating,
   avg(hcahps_base_score)              AS base_score,
