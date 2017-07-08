@@ -7,5 +7,5 @@ WHERE effective_care_avg_score IS NOT NULL
 AND readmission_death_avg_score IS NOT NULL
 ORDER BY effective_care_avg_score DESC,
          readmission_death_avg_score ASC
-LIMIT 20         
+LIMIT 10         
 ;
