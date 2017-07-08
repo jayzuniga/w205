@@ -1,4 +1,4 @@
--- This script returns the top 20 hospital procedures with
+-- This script returns the top 10 hospital procedures with
 -- highest variability
 
 SELECT procedure_name, 
