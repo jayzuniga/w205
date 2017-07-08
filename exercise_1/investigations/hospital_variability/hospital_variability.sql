@@ -6,4 +6,4 @@ SELECT procedure_name,
        var_score
 FROM Procedures
 ORDER BY var_score DESC 
-LIMIT 20;
+LIMIT 10;
