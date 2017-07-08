@@ -1,3 +1,8 @@
+We used the average effective care score per hospital (which was its average rating across a variety of procedures) and the base_score from the survey responses, with the caveat that not all hospitals had usable survey responses. There does appear to be some correlation between highly ranked hospitals and good survey scores.
+
+This is shown by the sample below which has the top hospitals by average effective rating. These hospitals with high average effective rating are also in the top 200 of survey base scores (out of 4824 hospitals).
+
+(ProviderId HospitalName EffectiveCareAvg ReadmissionDeathAvg AchievementScore ImprovementScore BaseScore - EffectiveRank BaseScore Rank)
 450851	BAYLOR HEART AND VASCULAR HOSPITAL	99.85	14.480000114440918	0.0	0.0	64.0	20.0	1	142
 420102	GHS PATEWOOD MEMORIAL HOSPITAL	99.83333333333333	9.049999833106995	0.0	0.0	78.0	20.0	2	35
 030107	ARIZONA SPINE AND JOINT HOSPITAL	99.81818181818181	9.75	0.0	0.0	67.0	20.0	3	119
@@ -8,6 +13,3 @@
 170198	SUMMIT SURGICAL, LLC	99.55555555555556	9.700000286102295	0.0	0.0	78.0	20.0	8	35
 450766	UT SOUTHWESTERN UNIVERSITY HOSPITAL-ZALE LIPSHY	99.44444444444444	13.46666685740153	0.0	0.0	61.0	20.0	9	169
 390322	Rothman Orthopaedic Specialty Hospital, LLC	99.36363636363636	9.5	0.0	0.0	70.0	20.0	10	95
-
-OK
-979.3319232020826	531504.08377427
