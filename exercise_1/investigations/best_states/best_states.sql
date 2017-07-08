@@ -1,4 +1,4 @@
--- This script gets the top 20 states based on their hospital
+-- This script gets the top 10 states based on their hospital
 -- averages
 
 SELECT *
