@@ -1,4 +1,8 @@
-#ProcedureName, ProcedureId, Variance
+To get procedures with highest variability across hospitals, I aggregated by procedure across
+all hospitals and then took the variance on procedure score. The table below shows the procedures
+with the highest variance.
+
+(ProcedureName, ProcedureId, Variance)
 ED1	ED_1b	8617.740839212507
 ED2	ED_2b	3864.6924460743544
 OP 18	OP_18b	1656.5529409803205
@@ -9,13 +13,3 @@ Fibrinolytic Therapy Received Within 30 Minutes Of Hospital Arrival	AMI_7a	352.6
 Fibrinolytic Therapy Received Within 30 Minutes of ED Arrival	OP_2	325.74632352941165
 Median time to pain med	OP_21	314.0819735739413
 Door to diagnostic eval	OP_20	285.00371267017476
-Healthcare workers given influenza vaccination	IMM_3_FAC_ADHPCT	267.25866979161765
-Warfarin therapy discharge instructions	VTE_5	265.78796126891007
-Venous thromboembolism prophylaxis	VTE_1	232.78828961700816
-Stroke Education	STK_8	196.37153240873673
-Home Management Plan of Care Document	CAC_3	161.7760416666667
-Immunization for influenza	IMM_2	142.68029969125467
-Discharge instructions	HF_1	139.9011388469527
-Evaluation of LVS Function	HF_2	108.40606462202838
-Discharged on Statin Medication	STK_6	100.74762297044258
-Initial antibiotic selection for CAP in immunocompetent patient	PN_6	86.04221827311703
